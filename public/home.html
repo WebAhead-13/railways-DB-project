@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railways</title>
+  </head>
+  <body>
+    <button>login</button>
+    <form>
+      <input
+        type="radio"
+        name="group1"
+        value="location"
+        id="location_input"
+        required
+      />
+      Choose by location<br />
+      <input type="radio" name="group1" value="stations" id="stations_input" />
+      choose by station<br />
+
+      <div>
+        <label for="location">Choose a location</label>
+
+        <select name="location" id="location">
+          <option value="Haifa">Haifa</option>
+          <option value="Tel-aviv">Tel-aviv</option>
+          <option value="jerusalem">jerusalem</option>
+          <option value="Be'ersheva">Be'ersheva</option>
+          <option value="Akko">Akko</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="stations">Choose a station</label>
+        <select name="stations" id="stations">
+          <option value="webAhead9">webAhead9</option>
+          <option value="webAhead10">webAhead10</option>
+          <option value="webAhead11">webAhead11</option>
+          <option value="webAhead12">webAhead12</option>
+          <option value="webAhead13">webAhead13</option>
+        </select>
+      </div>
+      <input
+        class="searchbutton"
+        type="submit"
+        value="Search"
+        id="submit"
+        required
+      />
+      <output></output>
+    </form>
+  </body>
+  <script src="home.js"></script>
+</html>

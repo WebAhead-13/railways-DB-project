@@ -1,0 +1,31 @@
+{
+  "name": "railways-db-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js -L"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead-13/railways-DB-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead-13/railways-DB-project/issues"
+  },
+  "homepage": "https://github.com/WebAhead-13/railways-DB-project#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "nodeman": "^1.1.2",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "pg": "^8.7.1"
+  }
+}
