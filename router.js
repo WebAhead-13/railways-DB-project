@@ -6,7 +6,8 @@ const handlers = require("./handlers");
 router.get("/", handlers.home);
 router.get("/login", handlers.login);
 router.post("/info", handlers.info); // html file
-router.get("/checkUser"); // json from database
+router.post("/checkUser", handlers.checkUsers); // json from database
+router.get("/logout", handlers.logout);
 
 // router.get("/add-train");
 // router.get("/remove-train");

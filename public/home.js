@@ -1,3 +1,17 @@
+const loginbutton = document.getElementById("login");
+const logoutbutton = document.getElementById("logout");
+const editbutton = document.getElementById("edit");
+
+if (document.cookie) {
+  logoutbutton.classList.add("visible");
+  loginbutton.classList.remove("visible");
+  editbutton.classList.add("visible");
+} else {
+  loginbutton.classList.add("visible");
+  logoutbutton.classList.remove("visible");
+  editbutton.classList.remove("visible");
+}
+
 const radio1 = document.getElementById("location_input");
 const radio2 = document.getElementById("stations_input");
 

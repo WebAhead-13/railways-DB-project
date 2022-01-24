@@ -5,9 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
+    <link rel="stylesheet" href="style.css">
+
   </head>
   <body>
-    <button>login</button>
+    <nav>
+      <a id= "home" class="homeButton" href="/">Home</a>
+      <a id= "login" class="loginbutton" href="/login">login</a>
+      <a id= "logout" class="logoutbutton" href="/logout">logout</a>
+      <a id= "edit" class="editbutton" href= >Edit</a>
+
+      </nav>
+
     <form>
       <input
         type="radio"
@@ -16,6 +25,8 @@
         id="location_input"
         required
       />
+
+
       Choose by location<br />
       <input type="radio" name="group1" value="stations" id="stations_input" />
       choose by station<br />

@@ -45,8 +45,8 @@ INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUE
 ('webAhead13', 'Akko', ARRAY[2, 4, 6, 8], '09:00:00', '22:00:00');
 
 INSERT INTO admins(username, password, title) VALUES
-('Saleh', 'saleh1234', 'manger'),
-('Riham', 'riham1234', 'co-manger');
+('saleh', 'saleh1234', 'manager'),
+('riham', 'riham1234', 'co-manager');
 
 
 COMMIT;

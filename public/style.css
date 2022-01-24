@@ -1,0 +1,16 @@
+.loginbutton {
+  display: none;
+}
+
+.logoutbutton {
+  display: none;
+}
+
+.editbutton {
+  display: none;
+}
+
+.visible {
+  /* visibility: visible; */
+  display: block;
+}
