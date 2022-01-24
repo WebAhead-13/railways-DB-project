@@ -59,11 +59,28 @@ function logout(req, res) {
   res.clearCookie("user");
   res.redirect("/");
 }
-
+function addStation(req, res) {
+  res.sendFile(path.join(__dirname, "./public/addStations.html"));
+}
+function addStations(req, res) {
+  db.query(
+    "INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES ($1,$2,$3,$3,$5)",
+    [
+      req.body.station_name,
+      req.body.location,
+      req.body.all_trains,
+      req.body.start_time,
+      req.body.end_time,
+    ]
+  );
+  // res.send(true);
+}
 module.exports = {
   home,
   login,
   info,
   checkUsers,
   logout,
+  addStations,
+  addStation,
 };
