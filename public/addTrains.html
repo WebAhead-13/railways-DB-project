@@ -5,8 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1></h1>
+    <h1>Add Train</h1>
+    <h2>enter train info</h2>
+    <form action="">
+      <label for="trainNumber">train number</label>
+      <input type="number" name="trainNumber" id="trainNumber" required />
+
+      <label for="driver">driver </label>
+      <input type="text" name="driver" id="driver" required />
+
+      <label>stations</label>
+      <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxes()">
+          <select>
+            <option>Select an option</option>
+            <option value=""></option>
+          </select>
+          <div class="overSelect"></div>
+        </div>
+        <div id="checkboxes">
+          <label for="one">
+            <input
+              type="checkbox"
+              id="webahead9"
+              class="trains"
+              value="webahead9"
+            />webahead9</label
+          >
+          <label for="webahead10">
+            <input
+              type="checkbox"
+              id="webahead10"
+              class="trains"
+              value="webahead10"
+            />webahead10</label
+          >
+          <label for="webahead11">
+            <input
+              type="checkbox"
+              id="webahead11"
+              class="trains"
+              value="webahead11"
+            />webahead11</label
+          >
+
+          <label for="webahead12">
+            <input
+              type="checkbox"
+              id="webahead12"
+              class="trains"
+              value="webahead12"
+            />webahead12</label
+          ><label for="webahead13">
+            <input
+              type="checkbox"
+              id="webahead13"
+              class="trains"
+              value="webahead13"
+            />webahead13</label
+          >
+        </div>
+      </div>
+
+      <label for="passenger_number">passengers number </label>
+      <input
+        type="number"
+        name="passenger_number"
+        id="passenger_number"
+        required
+      />
+
+      <input type="submit" value="add" id="login" required />
+    </form>
   </body>
+  <script src="./addTrains.js"></script>
 </html>
