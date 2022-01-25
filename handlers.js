@@ -64,7 +64,7 @@ function addStation(req, res) {
 }
 function addStations(req, res) {
   db.query(
-    "INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES ($1,$2,$3,$3,$5)",
+    "INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES ($1,$2,$3,$4,$5)",
     [
       req.body.station_name,
       req.body.location,
@@ -72,8 +72,13 @@ function addStations(req, res) {
       req.body.start_time,
       req.body.end_time,
     ]
-  );
-  // res.send(true);
+  ).then((result) => {
+    if (result.rowCount > 0) {
+      res.send({ adding: true });
+    } else {
+      res.send({ adding: false });
+    }
+  });
 }
 module.exports = {
   home,
