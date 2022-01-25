@@ -27,15 +27,15 @@ CREATE TABLE admins(
 );
 
 INSERT INTO trains(train_number, driver, stations, passenger_number) VALUES 
-(1, 'Mahmoud', ARRAY [1, 2], 200),
-(2, 'Shireen', ARRAY [1, 5], 300),
-(3, 'Raneen', ARRAY [2, 3], 200),
-(4, 'Mario', ARRAY [1, 2, 3, 4, 5], 350),
-(5, 'Julian', ARRAY [4, 3], 200),
-(6, 'Thaer', ARRAY[5, 3], 300),
-(7, 'Doaa', ARRAY[4, 1], 200),
-(8, 'Asraa', ARRAY[4, 5], 300),
-(9, 'Ahmed', ARRAY[1, 3], 200);
+(1, 'mahmoud', ARRAY [1, 2], 200),
+(2, 'shireen', ARRAY [1, 5], 300),
+(3, 'raneen', ARRAY [2, 3], 200),
+(4, 'mario', ARRAY [1, 2, 3, 4, 5], 350),
+(5, 'julian', ARRAY [4, 3], 200),
+(6, 'thaer', ARRAY[5, 3], 300),
+(7, 'doaa', ARRAY[4, 1], 200),
+(8, 'asraa', ARRAY[4, 5], 300),
+(9, 'ahmed', ARRAY[1, 3], 200);
 
 INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES
 ('webAhead9', 'haifa', ARRAY[1, 2, 4, 7, 9], '09:00:00', '22:00:00'),

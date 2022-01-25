@@ -80,6 +80,22 @@ function addStations(req, res) {
     }
   });
 }
+// res.send(true);
+
+function addTrain(req, res) {
+  res.sendFile(path.join(__dirname, "./public/addTrains.html"));
+}
+function addTrains(req, res) {
+  db.query(
+    "INSERT INTO trains(train_number, driver, stations, passenger_number) VALUES ($1,$2,$3,$4)",
+    [
+      req.body.train_number,
+      req.body.driver,
+      req.body.stations,
+      req.body.passenger_number,
+    ]
+  );
+}
 module.exports = {
   home,
   login,
@@ -88,4 +104,6 @@ module.exports = {
   logout,
   addStations,
   addStation,
+  addTrain,
+  addTrains,
 };
