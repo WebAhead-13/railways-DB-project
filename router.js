@@ -14,6 +14,7 @@ router.post("/add-stations", handlers.addStations);
 
 router.get("/add-train", handlers.addTrain);
 router.post("/add-trains", handlers.addTrains);
+// router.get("/edit", handlers.edit);
 
 // router.get("/remove-train");
 // router.get("/remove-station");

@@ -5,92 +5,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
-    <h1>add station</h1>
-    <h2>enter station info</h2>
-    <form action="">
-      <label for="stationName">station name</label>
-      <input type="text" name="stationName" id="stationName" required />
+    <a id="home" class="homeButton" href="/">Home</a>
 
-      <label for="location">location </label>
-      <input type="text" name="location" id="location" required />
+    <div class="title">
+      <h1>Add New Station Information</h1>
+    </div>
+    <div class="main">
+      <form action="">
+        <label for="stationName">Station Name</label><br />
+        <input
+          type="text"
+          name="stationName"
+          id="stationName"
+          required
+        /><br /><br />
 
-      <label>trains by train number</label>
-      <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes()">
-          <select>
-            <option>Select an option</option>
-            <option value=""></option>
-          </select>
-          <div class="overSelect"></div>
+        <label for="location">Location </label><br />
+        <input
+          type="text"
+          name="location"
+          id="location"
+          required
+        /><br /><br />>
+
+        <label>Trains by Train Number</label><br />
+        <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes()">
+            <select>
+              <option>Select an Option</option>
+              <option value=""></option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes">
+            <label for="one">
+              <input
+                type="checkbox"
+                id="one"
+                class="station"
+                value="1"
+              />1</label
+            >
+            <label for="two">
+              <input
+                type="checkbox"
+                id="two"
+                class="station"
+                value="2"
+              />2</label
+            >
+            <label for="three">
+              <input
+                type="checkbox"
+                id="three"
+                class="station"
+                value="3"
+              />3</label
+            >
+
+            <label for="four">
+              <input
+                type="checkbox"
+                id="four"
+                class="station"
+                value="4"
+              />4</label
+            ><label for="five">
+              <input
+                type="checkbox"
+                id="five"
+                class="station"
+                value="5"
+              />5</label
+            ><label for="six">
+              <input
+                type="checkbox"
+                id="six"
+                class="station"
+                value="6"
+              />6</label
+            ><label for="seven">
+              <input
+                type="checkbox"
+                id="seven"
+                class="station"
+                value="7"
+              />7</label
+            ><label for="eight">
+              <input
+                type="checkbox"
+                id="eight"
+                class="station"
+                value="8"
+              />8</label
+            ><label for="nine">
+              <input
+                type="checkbox"
+                id="nine"
+                class="station"
+                value="9"
+              />9</label
+            >
+          </div>
         </div>
-        <div id="checkboxes">
-          <label for="one">
-            <input type="checkbox" id="one" class="station" value="1" />1</label
-          >
-          <label for="two">
-            <input type="checkbox" id="two" class="station" value="2" />2</label
-          >
-          <label for="three">
-            <input
-              type="checkbox"
-              id="three"
-              class="station"
-              value="3"
-            />3</label
-          >
+        <br /><br />
 
-          <label for="four">
-            <input
-              type="checkbox"
-              id="four"
-              class="station"
-              value="4"
-            />4</label
-          ><label for="five">
-            <input
-              type="checkbox"
-              id="five"
-              class="station"
-              value="5"
-            />5</label
-          ><label for="six">
-            <input type="checkbox" id="six" class="station" value="6" />6</label
-          ><label for="seven">
-            <input
-              type="checkbox"
-              id="seven"
-              class="station"
-              value="7"
-            />7</label
-          ><label for="eight">
-            <input
-              type="checkbox"
-              id="eight"
-              class="station"
-              value="8"
-            />8</label
-          ><label for="nine">
-            <input
-              type="checkbox"
-              id="nine"
-              class="station"
-              value="9"
-            />9</label
-          >
-        </div>
-      </div>
+        <label for="start_at">Start Time</label>
+        <input type="time" name="start_at" id="start_at" step="1" required />
 
-      <label for="start_at">start time</label>
-      <input type="time" name="start_at" id="start_at" step="1" required />
+        <label for="end_at">End Time</label>
+        <input
+          type="time"
+          name="end_at"
+          id="end_at"
+          step="1"
+          required
+        /><br /><br />
 
-      <label for="end_at">end time</label>
-      <input type="time" name="end_at" id="end_at" step="1" required />
-
-      <input type="submit" value="add" id="login" required />
-    </form>
+        <input type="submit" value="add" id="login" required />
+      </form>
+    </div>
   </body>
   <script src="./addStations.js"></script>
 </html>

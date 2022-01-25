@@ -6,6 +6,7 @@ body {
   background-image: url(https://www.railway-technology.com/wp-content/uploads/sites/13/2018/02/bombardier-ed.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: sans-serif;
   margin-top: 40px;
 }
@@ -109,7 +110,7 @@ form {
   transform: translateY(4px);
 }
 
-.editbutton {
+/* .editbutton {
   display: none;
   padding: 8px;
   color: black;
@@ -125,6 +126,56 @@ form {
 .editbutton:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+} */
+
+.addTrainButton {
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(243, 6, 6);
+  border-radius: 20px;
+  position: relative;
+}
+.addTrainButton:hover {
+  color: rgb(63, 95, 165);
+}
+.addTrainButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.addStationButton {
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(243, 6, 6);
+  border-radius: 20px;
+  position: relative;
+}
+.addStationButton:hover {
+  color: rgb(63, 95, 165);
+}
+.addStationButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.addUserButton {
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(243, 6, 6);
+  border-radius: 20px;
+  position: relative;
+}
+.addUserButton:hover {
+  color: rgb(63, 95, 165);
+}
+.addUserButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .visible {
@@ -132,36 +183,51 @@ form {
   display: block;
 }
 
-.multiselect {
-  width: 200px;
-}
+/* .editstyle {
+  display: flex;
+  flex-direction: column;
+} */
 
-.selectBox {
+.dropbtn {
+  display: none;
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(247, 7, 7);
+  border-radius: 20px;
   position: relative;
 }
 
-.selectBox select {
-  width: 100%;
-  font-weight: bold;
-}
-
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#checkboxes {
+.dropdown-content {
   display: none;
-  border: 1px #dadada solid;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-#checkboxes label {
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
-#checkboxes label:hover {
-  background-color: #1e90ff;
+.dropbtn:hover {
+  color: rgb(63, 95, 165);
+}
+.dropbtn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
