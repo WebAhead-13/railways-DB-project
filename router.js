@@ -8,10 +8,13 @@ router.get("/login", handlers.login);
 router.post("/info", handlers.info); // html file
 router.post("/checkUser", handlers.checkUsers); // json from database
 router.get("/logout", handlers.logout);
+
 router.get("/add-station", handlers.addStation);
 router.post("/add-stations", handlers.addStations);
 
-// router.get("/add-train");
+router.get("/add-train", handlers.addTrain);
+router.post("/add-trains", handlers.addTrains);
+
 // router.get("/remove-train");
 // router.get("/remove-station");
 // router.get("/add-user");

@@ -64,7 +64,7 @@ function addStation(req, res) {
 }
 function addStations(req, res) {
   db.query(
-    "INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES ($1,$2,$3,$4,$5)",
+    "INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES ($1,$2,$3,$4,$5) RETURNING id",
     [
       req.body.station_name,
       req.body.location,
@@ -73,28 +73,60 @@ function addStations(req, res) {
       req.body.end_time,
     ]
   ).then((result) => {
+    // console.log(result.rows[0].id);
     if (result.rowCount > 0) {
+      updateTrains(req.body.all_trains, result.rows[0].id);
       res.send({ adding: true });
     } else {
       res.send({ adding: false });
     }
   });
 }
-// res.send(true);
+
+function updateTrains(trains, new_id) {
+  trains.forEach((train) => {
+    db.query(`SELECT stations FROM trains WHERE id = $1`, [train]).then(
+      (result) => {
+        const ar = result.rows[0].stations.concat(new_id);
+        db.query(`UPDATE trains SET stations = $1 WHERE id = $2`, [ar, train]);
+      }
+    );
+  });
+}
 
 function addTrain(req, res) {
   res.sendFile(path.join(__dirname, "./public/addTrains.html"));
 }
 function addTrains(req, res) {
   db.query(
-    "INSERT INTO trains(train_number, driver, stations, passenger_number) VALUES ($1,$2,$3,$4)",
+    "INSERT INTO trains(train_number, driver, stations, passenger_number) VALUES ($1,$2,$3,$4) RETURNING id",
     [
       req.body.train_number,
       req.body.driver,
-      req.body.stations,
+      req.body.all_stations,
       req.body.passenger_number,
     ]
-  );
+  ).then((result) => {
+    if (result.rowCount > 0) {
+      updateStations(req.body.all_stations, result.rows[0].id);
+      res.send({ adding: true });
+    } else {
+      res.send({ adding: false });
+    }
+  });
+}
+function updateStations(stations, new_ids) {
+  stations.forEach((station) => {
+    db.query(`SELECT all_trains FROM stations WHERE id = $1`, [station]).then(
+      (result) => {
+        const ar = result.rows[0].all_trains.concat(new_ids);
+        db.query(`UPDATE stations SET all_trains = $1 WHERE id = $2`, [
+          ar,
+          station,
+        ]);
+      }
+    );
+  });
 }
 module.exports = {
   home,
