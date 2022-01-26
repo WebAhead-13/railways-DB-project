@@ -128,6 +128,32 @@ function updateStations(stations, new_ids) {
     );
   });
 }
+
+function addUser(req, res) {
+  res.sendFile(path.join(__dirname, "./public/addUsers.html"));
+}
+
+function addUsers(req, res) {
+  db.query(
+    "INSERT INTO admins(username, password, title) VALUES ($1,$2,$3) RETURNING id",
+    [req.body.username, req.body.password, req.body.title]
+  )
+    .then((result) => {
+      if (result.rowCount > 0) {
+        res.send({ adding: true });
+      } else {
+        res.send({ adding: false });
+      }
+    })
+    .catch((error) => {
+      if ((error.code = 23505)) {
+        res.send({ adding: 23505 });
+      } else {
+        res.send({ adding: false });
+      }
+    });
+}
+
 module.exports = {
   home,
   login,
@@ -138,4 +164,6 @@ module.exports = {
   addStation,
   addTrain,
   addTrains,
+  addUser,
+  addUsers,
 };

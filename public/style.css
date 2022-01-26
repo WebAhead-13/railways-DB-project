@@ -5,7 +5,9 @@ body {
 
   background-image: url(https://www.railway-technology.com/wp-content/uploads/sites/13/2018/02/bombardier-ed.jpg);
   background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
+  background-attachment: fixed;
   font-family: sans-serif;
   margin-top: 40px;
 }

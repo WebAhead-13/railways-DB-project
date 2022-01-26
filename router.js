@@ -3,21 +3,26 @@ const express = require("express");
 const router = express.Router();
 const handlers = require("./handlers");
 
+const authnticate = require("./middleware/authnticate");
+
 router.get("/", handlers.home);
+router.post("/info", handlers.info);
+
 router.get("/login", handlers.login);
-router.post("/info", handlers.info); // html file
-router.post("/checkUser", handlers.checkUsers); // json from database
+router.post("/checkUser", handlers.checkUsers);
 router.get("/logout", handlers.logout);
 
-router.get("/add-station", handlers.addStation);
-router.post("/add-stations", handlers.addStations);
+router.get("/add-station", authnticate, handlers.addStation);
+router.post("/add-stations", authnticate, handlers.addStations);
 
-router.get("/add-train", handlers.addTrain);
-router.post("/add-trains", handlers.addTrains);
+router.get("/add-train", authnticate, handlers.addTrain);
+router.post("/add-trains", authnticate, handlers.addTrains);
+
+router.get("/add-user", authnticate, handlers.addUser);
+router.post("/add-users", authnticate, handlers.addUsers);
 
 // router.get("/remove-train");
 // router.get("/remove-station");
-// router.get("/add-user");
 // router.get("/remove-user");
 
 router.use((req, res) => {
