@@ -12,7 +12,7 @@ CREATE TABLE trains (
 
 CREATE TABLE stations(
     id SERIAL PRIMARY KEY,
-    station_name VARCHAR(255),
+    station_name VARCHAR(255) UNIQUE NOT NULL,
     location VARCHAR(255),
     all_trains INTEGER [],
     start_at TIME,
@@ -43,6 +43,8 @@ INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUE
 ('webahead11', 'jerusalem', ARRAY[3, 4, 5, 6, 9], '06:30:00', '23:00:00'),
 ('webahead12', 'be`ersheva', ARRAY[5, 7, 8], '07:00:00', '22:00:00'),
 ('webahead13', 'akko', ARRAY[2, 4, 6, 8], '09:00:00', '22:00:00');
+('webahead14', 'akko', ARRAY[2, 4, 6, 8], '09:00:00', '22:00:00');
+
 
 INSERT INTO admins(username, password, title) VALUES
 ('saleh', 'saleh1234', 'manager'),

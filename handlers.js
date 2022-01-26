@@ -39,6 +39,7 @@ function info(req, res) {
 function checkUsers(req, res) {
   const username = req.body.username;
   const password = req.body.password;
+  console.log(req.param("fromUrl"), "postLogin");
 
   db.query("SELECT username, password FROM admins WHERE username = $1", [
     req.body.username,
@@ -62,6 +63,19 @@ function logout(req, res) {
   res.clearCookie("user");
   res.redirect("/");
 }
+
+function getStations(req, res) {
+  db.query("SELECT station_name FROM stations").then((result) => {
+    res.send(result.rows);
+  });
+}
+
+function getTrains(req, res) {
+  db.query("SELECT train_number FROM trains").then((result) => {
+    res.send(result.rows);
+  });
+}
+
 function addStation(req, res) {
   res.sendFile(path.join(__dirname, "./public/addStations.html"));
 }
@@ -75,15 +89,23 @@ function addStations(req, res) {
       req.body.start_time,
       req.body.end_time,
     ]
-  ).then((result) => {
-    // console.log(result.rows[0].id);
-    if (result.rowCount > 0) {
-      updateTrains(req.body.all_trains, result.rows[0].id);
-      res.send({ adding: true });
-    } else {
-      res.send({ adding: false });
-    }
-  });
+  )
+    .then((result) => {
+      // console.log(result.rows[0].id);
+      if (result.rowCount > 0) {
+        updateTrains(req.body.all_trains, result.rows[0].id);
+        res.send({ adding: true });
+      } else {
+        res.send({ adding: false });
+      }
+    })
+    .catch((error) => {
+      if ((error.code = 23505)) {
+        res.send({ adding: 23505 });
+      } else {
+        res.send({ adding: false });
+      }
+    });
 }
 
 function updateTrains(trains, new_id) {
@@ -132,7 +154,6 @@ function updateStations(stations, new_ids) {
   });
 }
 
-<<<<<<< HEAD
 function addUser(req, res) {
   res.sendFile(path.join(__dirname, "./public/addUsers.html"));
 }
@@ -158,8 +179,6 @@ function addUsers(req, res) {
     });
 }
 
-=======
->>>>>>> 26b341327a32a8d39ce2663d8f4928f141a9b7f3
 module.exports = {
   home,
   login,
@@ -172,4 +191,6 @@ module.exports = {
   addTrains,
   addUser,
   addUsers,
+  getStations,
+  getTrains,
 };

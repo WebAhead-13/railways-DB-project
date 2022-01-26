@@ -18,11 +18,19 @@ document.querySelector("form").addEventListener("submit", (event) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.success == true) {
-        window.location.href = "http://localhost:3000/";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const myUrl = urlParams.get("fromUrl");
+        if (myUrl == null) {
+          window.location.href = "http://localhost:3000/";
+        } else {
+          window.location.href = `http://localhost:3000${myUrl}`;
+        }
       } else {
+        const output = document.querySelector("output");
+        output.textContent = "";
         const errormessage = document.createElement("p");
         errormessage.textContent = "incorrect username or password";
-        const output = document.querySelector("output");
         output.appendChild(errormessage);
       }
     });

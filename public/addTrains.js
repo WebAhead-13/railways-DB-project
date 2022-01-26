@@ -1,3 +1,30 @@
+const checkbox_div = document.getElementById("checkboxes");
+fetch("http://localhost:3000/station_info")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      station_ = data[i].station_name;
+      const station_label = document.createElement("label");
+
+      const station_input = document.createElement("input");
+      station_input.type = "checkbox";
+      station_input.id = data[i].station_name;
+      station_input.classList.add("trains");
+      station_input.value = String(i + 1);
+      // station_label.appendChild();
+      station_label.appendChild(station_input);
+      station_label.innerHTML += data[i].station_name;
+
+      checkbox_div.appendChild(station_label);
+    }
+  })
+  .catch((error) => {
+    alert(error);
+    window.location.href = "http://localhost:3000/add-station";
+  });
+
 var expanded = false;
 
 function showCheckboxes() {
@@ -16,7 +43,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
   var missing = true;
   const inputs = document.querySelectorAll(".trains");
+  console.log(inputs);
   inputs.forEach((input) => {
+    console.log(inputs);
     if (input.checked) {
       missing = false;
       var checkedValue = document.querySelectorAll(".trains:checked");

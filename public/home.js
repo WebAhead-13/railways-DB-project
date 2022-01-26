@@ -1,15 +1,23 @@
 const loginbutton = document.getElementById("login");
 const logoutbutton = document.getElementById("logout");
-const dropbtn = document.getElementById(" dropbtn");
+const dropdown = document.getElementById("dropdown");
+const dropbtn = document.getElementById("dropbtn");
+const dropdown_content = document.getElementById("dropdown-content");
+console.log(dropbtn);
+console.log(logoutbutton);
 
 if (document.cookie) {
   logoutbutton.classList.add("visible");
   loginbutton.classList.remove("visible");
-  dropbtn.classList.add("visible");
+  // dropdown.classList.add("visible");
+  // dropbtn.classList.add("visible");
+  // dropdown_content.classList.add("visible");
 } else {
   loginbutton.classList.add("visible");
   logoutbutton.classList.remove("visible");
-  dropbtn.classList.remove("visible");
+  // dropdown.classList.remove("visible");
+  // dropbtn.classList.remove("visible");
+  // dropdown_content.classList.remove("visible");
 }
 
 const radio1 = document.getElementById("location_input");
@@ -54,12 +62,36 @@ const submit = document
       })
       .then((data) => {
         if (data.location) {
-          console.log(data.location);
+          const output = document.querySelector("output");
+          output.innerHTML = "";
+          const result = document.createElement("p2");
+          const result1 = document.createElement("p3");
+          const result2 = document.createElement("p4");
+          const result3 = document.createElement("p4");
+
+          result.innerHTML = "location: " + data.location;
+          result1.innerHTML = "trains: " + data.all_trains;
+          result2.innerHTML = "opens at: " + data.start_at;
+          result3.innerHTML = "closes at: " + data.end_at;
+
+          document.querySelector("output").appendChild(result);
+          document.querySelector("output").appendChild(result1);
+          document.querySelector("output").appendChild(result2);
+          document.querySelector("output").appendChild(result3);
         } else {
           console.log(data);
-          const result = document.createElement("p");
-          result.innerHTML = data.station_name;
+          const output = document.querySelector("output");
+          output.innerHTML = "";
+          const result = document.createElement("p2");
+          const result1 = document.createElement("p3");
+          const result2 = document.createElement("p4");
+
+          result.innerHTML = "station name: " + data.station_name;
+          result1.innerHTML = "opens at: " + data.start_at;
+          result2.innerHTML = "closes at: " + data.end_at;
           document.querySelector("output").appendChild(result);
+          document.querySelector("output").appendChild(result1);
+          document.querySelector("output").appendChild(result2);
         }
       });
   });

@@ -7,11 +7,7 @@ body {
   background-position: center;
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
-<<<<<<< HEAD
   background-attachment: fixed;
-=======
-  background-repeat: no-repeat;
->>>>>>> 26b341327a32a8d39ce2663d8f4928f141a9b7f3
   font-family: sans-serif;
   margin-top: 40px;
 }
@@ -192,9 +188,11 @@ form {
   display: flex;
   flex-direction: column;
 } */
-
+.dropdown {
+  display: block;
+}
 .dropbtn {
-  display: none;
+  display: block;
   padding: 8px;
   color: black;
   font-size: 30px;
@@ -235,4 +233,7 @@ form {
 .dropbtn:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+p {
+  color: red;
 }

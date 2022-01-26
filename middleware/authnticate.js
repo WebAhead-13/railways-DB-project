@@ -2,9 +2,10 @@ const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
   const user = req.cookies.user;
-
   if (!user) {
-    res.redirect("/login");
+    // res.baseUrl = req.originalUrl;
+    // console.log(res.baseUrl, "ggg");
+    res.redirect("/login?fromUrl=" + req.originalUrl);
     return;
   }
 

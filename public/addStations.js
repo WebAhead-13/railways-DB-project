@@ -1,3 +1,30 @@
+const checkbox_div = document.getElementById("checkboxes");
+fetch("http://localhost:3000/train_info")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    for (let i = 0; i < data.length; i++) {
+      train_ = data[i].train_number;
+      const train_label = document.createElement("label");
+
+      const train_input = document.createElement("input");
+      train_input.type = "checkbox";
+      train_input.id = String(i + 1);
+      train_input.classList.add("station");
+      train_input.value = String(i + 1);
+      // station_label.appendChild();
+      train_label.appendChild(train_input);
+      train_label.innerHTML += data[i].train_number;
+
+      checkbox_div.appendChild(train_label);
+    }
+  })
+  .catch((error) => {
+    alert(error);
+    window.location.href = "http://localhost:3000/add-station";
+  });
+
 var expanded = false;
 
 function showCheckboxes() {
@@ -5,7 +32,7 @@ function showCheckboxes() {
   if (!expanded) {
     checkboxes.style.display = "block";
     expanded = true;
-    document.getElementById("one").required;
+    document.getElementById("1").required;
   } else {
     checkboxes.style.display = "none";
     expanded = false;
@@ -57,6 +84,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
         if (data.adding == true) {
           alert("station added");
           window.location.href = "http://localhost:3000/";
+        } else if ((data.adding = 23505)) {
+          alert("station  already exists");
         } else {
           alert("sth wen wron, station not added");
         }

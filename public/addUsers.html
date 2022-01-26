@@ -5,28 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style2.css" />
   </head>
   <body>
-    <h1>Add user</h1>
-    <h2>enter user info</h2>
-    <form>
-      <label for="username">username</label>
-      <input type="text" name="username" id="username" required />
+    <a id="home" class="homeButton" href="/">Home</a>
 
-      <label for="username">password</label>
-      <input type="password" name="password" id="password" required />
-
-      <label for="title">title</label>
-      <input
-        type="text"
-        name="title"
-        id="title"
-        required
-        placeholder="example:manager"
-      />
-      <input type="submit" value="add" id="adduser" required />
-    </form>
+    <div class="title"><h1>Add New Train Information</h1></div>
+    <div class="main">
+      <form class="formStyle">
+        <label for="username">username</label><br />
+        <input type="text" name="username" id="username" required />
+        <br /><br />
+        <label for="username">password</label><br />
+        <input type="password" name="password" id="password" required />
+        <br /><br />
+        <label for="title">title</label><br />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          required
+          placeholder="example:manager"
+        />
+        <br /><br />
+        <input type="submit" value="add" id="adduser" required />
+      </form>
+    </div>
   </body>
   <script src="./addUsers.js"></script>
 </html>
