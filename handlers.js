@@ -12,6 +12,9 @@ function login(req, res) {
   res.sendFile(path.join(__dirname, "./public/login.html"));
 }
 
+// function edit(req, res) {
+//   res.sendFile(path.join(__dirname, "./public/edit.html"));
+// }
 function info(req, res) {
   if (req.body.Myoption == "location") {
     db.query(
@@ -129,6 +132,7 @@ function updateStations(stations, new_ids) {
   });
 }
 
+<<<<<<< HEAD
 function addUser(req, res) {
   res.sendFile(path.join(__dirname, "./public/addUsers.html"));
 }
@@ -154,6 +158,8 @@ function addUsers(req, res) {
     });
 }
 
+=======
+>>>>>>> 26b341327a32a8d39ce2663d8f4928f141a9b7f3
 module.exports = {
   home,
   login,

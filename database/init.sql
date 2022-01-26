@@ -38,11 +38,11 @@ INSERT INTO trains(train_number, driver, stations, passenger_number) VALUES
 (9, 'ahmed', ARRAY[1, 3], 200);
 
 INSERT INTO stations(station_name, location, all_trains, start_at, end_at) VALUES
-('webAhead9', 'haifa', ARRAY[1, 2, 4, 7, 9], '09:00:00', '22:00:00'),
-('webAhead10', 'tel-aviv', ARRAY[1, 3, 4], '09:00:00', '20:00:00'),
-('webAhead11', 'jerusalem', ARRAY[3, 4, 5, 6, 9], '06:30:00', '23:00:00'),
-('webAhead12', 'be`ersheva', ARRAY[5, 7, 8], '07:00:00', '22:00:00'),
-('webAhead13', 'akko', ARRAY[2, 4, 6, 8], '09:00:00', '22:00:00');
+('webahead9', 'haifa', ARRAY[1, 2, 4, 7, 9], '09:00:00', '22:00:00'),
+('webahead10', 'tel-aviv', ARRAY[1, 3, 4], '09:00:00', '20:00:00'),
+('webahead11', 'jerusalem', ARRAY[3, 4, 5, 6, 9], '06:30:00', '23:00:00'),
+('webahead12', 'be`ersheva', ARRAY[5, 7, 8], '07:00:00', '22:00:00'),
+('webahead13', 'akko', ARRAY[2, 4, 6, 8], '09:00:00', '22:00:00');
 
 INSERT INTO admins(username, password, title) VALUES
 ('saleh', 'saleh1234', 'manager'),

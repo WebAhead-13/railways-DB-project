@@ -5,69 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="buttons">
-      <a id= "home" class="homeButton" href="/">Home</a>
-      <a id= "login" class="loginbutton" href="/login">login</a>
-      <a id= "logout" class="logoutbutton" href="/logout">logout</a>
-      <a id= "edit" class="editbutton" href= >Edit</a>
+      <a id="home" class="homeButton" href="/">Home</a>
+      <a id="login" class="loginbutton" href="/login">login</a>
+      <a id="logout" class="logoutbutton" href="/logout">logout</a>
 
-      </nav>
-      <div class="title"><h1>Welcome to the Railways Website</h1></div>
-      <div class="main">
-
-    <form>
-      <input
-        type="radio"
-        name="group1"
-        value="location"
-        id="location_input"
-        required
-      />
-
-
-      Choose by location<br />
-      <input class="locationOptions" type="radio" name="group1" value="stations" id="stations_input" />
-      choose by station<br />
-      <br>
-
-      <div>
-        <label for="location">Choose a location</label>
-
-        <select name="location" id="location">
-          <option value="haifa">Haifa</option>
-          <option value="tel-aviv">Tel-aviv</option>
-          <option value="jerusalem">jerusalem</option>
-          <option value="be'ersheva">Be'ersheva</option>
-          <option value="akko">Akko</option>
-        </select>
+      <div class="dropdown">
+        <a id=" dropbtn" class="dropbtn" href="#">
+          Edit
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <a href="/add-train">Add Train</a>
+          <a href="/add-station">Add Station</a>
+          <a href="/add-user">Add User</a>
+        </div>
       </div>
-      <br>
+    </nav>
+    <div class="title"><h1>Welcome to the WebAhead Railways Website</h1></div>
+    <div class="main">
+      <form>
+        <input
+          type="radio"
+          name="group1"
+          value="location"
+          id="location_input"
+          required
+        />
 
-      <div>
-        <label for="stations">Choose a station</label>
-        <select name="stations" id="stations" class="stationsOptions">
-          <option value="webahead9">webAhead9</option>
-          <option value="webahead10">webAhead10</option>
-          <option value="webahead11">webAhead11</option>
-          <option value="webahead12">webAhead12</option>
-          <option value="webahead13">webAhead13</option>
-        </select>
-      </div>
-      <br>
-      <input
-        class="searchbutton"
-        type="submit"
-        value="Search"
-        id="submit"
-        required
-      />
-      <br><br>
-      <output></output>
-    </form>
+        Choose by location<br />
+        <input
+          class="locationOptions"
+          type="radio"
+          name="group1"
+          value="stations"
+          id="stations_input"
+        />
+        choose by station<br />
+        <br />
+
+        <div>
+          <label for="location">Choose a location</label>
+
+          <select name="location" id="location">
+            <option value="haifa">Haifa</option>
+            <option value="tel-aviv">Tel-aviv</option>
+            <option value="jerusalem">jerusalem</option>
+            <option value="be'ersheva">Be'ersheva</option>
+            <option value="akko">Akko</option>
+          </select>
+        </div>
+        <br />
+
+        <div>
+          <label for="stations">Choose a station</label>
+          <select name="stations" id="stations" class="stationsOptions">
+            <option value="webahead9">webAhead9</option>
+            <option value="webahead10">webAhead10</option>
+            <option value="webahead11">webAhead11</option>
+            <option value="webahead12">webAhead12</option>
+            <option value="webahead13">webAhead13</option>
+          </select>
+        </div>
+        <br />
+        <input
+          class="searchbutton"
+          type="submit"
+          value="Search"
+          id="submit"
+          required
+        />
+        <br /><br />
+        <output></output>
+      </form>
     </div>
   </body>
   <script src="home.js"></script>

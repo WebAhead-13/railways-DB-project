@@ -1,0 +1,106 @@
+.homeButton {
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(29, 87, 27);
+  border-radius: 20px;
+  position: relative;
+}
+.homeButton:hover {
+  color: rgb(63, 95, 165);
+}
+.homeButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* .backButton {
+  padding: 8px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(5, 44, 13);
+  border-radius: 20px;
+  position: relative;
+}
+.backButton:hover {
+  color: rgb(63, 95, 165);
+}
+.backButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+} */
+
+.visible {
+  /* visibility: visible; */
+  display: block;
+}
+
+body {
+  background-image: url(https://www.railway-technology.com/wp-content/uploads/sites/13/2020/01/railway-3575846_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  margin-top: 40px;
+}
+
+.main {
+  background-color: rgb(0, 0, 0, 0.5);
+  width: 800px;
+  margin: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+form {
+  padding: 10px;
+}
+.title {
+  width: 800px;
+  background-color: rgb(0, 0, 0, 6);
+  margin: auto;
+  color: #ffffff;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.formStyle {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}

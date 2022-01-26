@@ -5,81 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Railways</title>
-    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="stylesheet" href="style2.css" />
   </head>
   <body>
-    <h1>Add Train</h1>
-    <h2>enter train info</h2>
-    <form action="">
-      <label for="trainNumber">train number</label>
-      <input type="number" name="trainNumber" id="trainNumber" required />
+    <a id="home" class="homeButton" href="/">Home</a>
 
-      <label for="driver">driver </label>
-      <input type="text" name="driver" id="driver" required />
+    <div class="title"><h1>Add New Train Information</h1></div>
+    <div class="main">
+      <form class="formStyle" action="">
+        <label for="trainNumber">train number</label><br />
+        <input
+          type="number"
+          name="trainNumber"
+          id="trainNumber"
+          required
+        /><br /><br />
 
-      <label>stations</label>
-      <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes()">
-          <select>
-            <option>Select an option</option>
-            <option value=""></option>
-          </select>
-          <div class="overSelect"></div>
+        <label for="driver">driver </label><br />
+        <input type="text" name="driver" id="driver" required /><br /><br />
+
+        <label>stations</label>
+        <div class="multiselect">
+          <div class="selectBox" onclick="showCheckboxes()">
+            <select>
+              <option>Select an option</option>
+              <option value=""></option>
+            </select>
+            <div class="overSelect"></div>
+          </div>
+          <div id="checkboxes">
+            <label for="one">
+              <input
+                type="checkbox"
+                id="webahead9"
+                class="trains"
+                value="1"
+              />webahead9</label
+            >
+            <label for="webahead10">
+              <input
+                type="checkbox"
+                id="webahead10"
+                class="trains"
+                value="2"
+              />webahead10</label
+            >
+            <label for="webahead11">
+              <input
+                type="checkbox"
+                id="webahead11"
+                class="trains"
+                value="3"
+              />webahead11</label
+            >
+
+            <label for="webahead12">
+              <input
+                type="checkbox"
+                id="webahead12"
+                class="trains"
+                value="4"
+              />webahead12</label
+            ><label for="webahead13">
+              <input
+                type="checkbox"
+                id="webahead13"
+                class="trains"
+                value="5"
+              />webahead13</label
+            >
+          </div>
         </div>
-        <div id="checkboxes">
-          <label for="one">
-            <input
-              type="checkbox"
-              id="webahead9"
-              class="trains"
-              value="1"
-            />webahead9</label
-          >
-          <label for="webahead10">
-            <input
-              type="checkbox"
-              id="webahead10"
-              class="trains"
-              value="2"
-            />webahead10</label
-          >
-          <label for="webahead11">
-            <input
-              type="checkbox"
-              id="webahead11"
-              class="trains"
-              value="3"
-            />webahead11</label
-          >
+        <br /><br />
 
-          <label for="webahead12">
-            <input
-              type="checkbox"
-              id="webahead12"
-              class="trains"
-              value="4"
-            />webahead12</label
-          ><label for="webahead13">
-            <input
-              type="checkbox"
-              id="webahead13"
-              class="trains"
-              value="5"
-            />webahead13</label
-          >
-        </div>
-      </div>
+        <label for="passenger_number">passengers number </label><br />
+        <input
+          type="number"
+          name="passenger_number"
+          id="passenger_number"
+          required
+        /><br /><br />
 
-      <label for="passenger_number">passengers number </label>
-      <input
-        type="number"
-        name="passenger_number"
-        id="passenger_number"
-        required
-      />
-
-      <input type="submit" value="add" id="login" required />
-    </form>
+        <input type="submit" value="add" id="login" required />
+      </form>
+    </div>
   </body>
   <script src="./addTrains.js"></script>
 </html>
